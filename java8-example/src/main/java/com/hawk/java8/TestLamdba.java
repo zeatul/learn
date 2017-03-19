@@ -1,7 +1,12 @@
 package com.hawk.java8;
 
 import java.util.Arrays;
-
+/**
+ * java8 新特性
+ * lambda表达式
+ * @author zhp
+ *
+ */
 public class TestLamdba {
 
 	public static void main(String[] args) {
@@ -21,21 +26,30 @@ public class TestLamdba {
 			return result;
 		});
 		
-		testFunction(System.out.println());
+		int a = 10;
+		int b = 11;
+		testFunction(a,b, (e1,e2)->{System.out.println(e1+e2);});
 	}
 	
-	private static void testFunction(Object println) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
+	/**
+	 * @FunctionalInterface 注解的函数只允许有一个没有实现的方法，可以有多个默认的实现方法
+	 * @author zhp
+	 *
+	 * @param <T>
+	 */
 	@FunctionalInterface
-	public static interface Functional{
-		void method();
+	public static interface Functional<T>{
+		void method(T e1,T e2);
+		
+		default double sqrt(int a){
+			return Math.sqrt(a);
+		}
 	}
 	
-	public static void testFunction(Functional fun){
-		fun.method();
+	public static <T> void testFunction(T a1,T a2,Functional<T> fun){
+		fun.method(a1,a2);
 	}
 
 }
