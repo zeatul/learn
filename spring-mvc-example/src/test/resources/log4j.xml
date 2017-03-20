@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.hawk.springmvc">
+	<logger name="spittr">
 		<level value="info" />
 	</logger>
 	

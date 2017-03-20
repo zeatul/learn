@@ -1,14 +1,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <html>
-<head>
-	<title>Home</title>
-</head>
-<body>
-<h1 style="color:green">
-	Hello world!  
-</h1>
+  <head>
+    <title>Spitter</title>
+    <link rel="stylesheet" 
+          type="text/css" 
+          href="<c:url value="/resources/style.css" />" >
+  </head>
+  <body>
+    <h1>Welcome to Spitter</h1>
 
-<P>  The time on the server is ${serverTime}. </P>
-</body>
+    <a href="<c:url value="/spittles" />">Spittles</a> | 
+    <a href="<c:url value="/spitter/register" />">Register</a>
+  </body>
 </html>
